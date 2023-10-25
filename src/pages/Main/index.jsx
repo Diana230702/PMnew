@@ -1,10 +1,8 @@
-import React from 'react'
-import cls from './Main.module.scss'
+import React from "react";
+import cls from "./Main.module.scss";
 
 const Main = () => {
-  return (
-    <div>Main</div>
-  )
-}
+  return <div>Main</div>;
+};
 
-export default Main
+export default Main;

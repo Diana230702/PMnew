@@ -1,15 +1,19 @@
 import { useState } from "react";
 import cls from "./SignIn.module.scss";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../../Redux/Actions/LoginAction";
 
 const SignIn = () => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
+    dispatch(login({ email, password }));
   };
+
   return (
     <div className={cls.container}>
       <div className={cls.form}>
