@@ -58,32 +58,78 @@ import { API } from "../consts";
 // );
 
 // // создание getProduct с использованием извлеченного токена
-// export const getProduct = createAsyncThunk("product/getProduct", async () => {
-//   try {
-//     const response = await axios.get(`${API}/products/`, {
-//       headers: {
-//         Authorization: `Bearer ${token}`, // Добавляем заголовок Authorization с токеном
-//       },
-//     });
-//     return response.data;
-//   } catch (error) {
-//     throw new Error("Failed to fetch products");
-//   }
-// });
+export const getProduct = createAsyncThunk("product/getProduct", async () => {
+  try {
+    const response = await axios.get(`${API}/products/`);
+    //  {
+    //   headers: {
+    //     Authorization: `Bearer ${token}`, // Добавляем заголовок Authorization с токеном
+    //   },
+    // });
+    return response.data;
+  } catch (error) {
+    throw new Error("Failed to fetch products");
+  }
+});
 // извлечение токена из localStorage
-const token = localStorage.getItem("token");
-console.log("Токен из localStorage:", token);
+// const token = localStorage.getItem("token");
+
+// console.log("Токен из localStorage:", token);
+
+// export const createProduct = createAsyncThunk(
+
+//   "product/createProduct",
+//   async ({ productData, token }) => {
+//     try {
+//       console.log("Токен для запроса создания продукта:", token);
+//       const response = await axios.post(`${API}/products/`, productData, {
+//         headers: {
+//           Authorization: `Bearer ${token}`,
+//         },
+//       });
+
+//       console.log("Ответ сервера на запрос создания продукта:", response);
+//       return response.data;
+//     } catch (error) {
+//       throw new Error("Failed to create product");
+//     }
+//   }
+// );
+
+// export const createProduct = createAsyncThunk(
+//   "product/createProduct",
+//   async ({ productData, token }) => {
+//     try {
+//       console.log("Токен для запроса создания продукта:", token);
+//       const response = await axios.post(`${API}/products/`, productData, {
+//         headers: {
+//           Authorization: `Bearer ${token}`,
+//         },
+//       });
+
+//       console.log("Ответ сервера на запрос создания продукта:", response);
+//       return response.data;
+//     } catch (error) {
+//       throw new Error("Failed to create product");
+//     }
+//   }
+// );
 
 export const createProduct = createAsyncThunk(
   "product/createProduct",
-  async (productData) => {
+  async ({ productData, token }) => {
     try {
       console.log("Токен для запроса создания продукта:", token);
-      const response = await axios.post(`${API}/products/`, productData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await axios.post(
+        `${API}/products/`,
+        JSON.stringify(productData),
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json", // Установка заголовка Content-Type для указания формата данных
+          },
+        }
+      );
 
       console.log("Ответ сервера на запрос создания продукта:", response);
       return response.data;
@@ -93,18 +139,18 @@ export const createProduct = createAsyncThunk(
   }
 );
 
-export const getProduct = createAsyncThunk("product/getProduct", async () => {
-  try {
-    console.log("Токен для запроса получения продуктов:", token);
-    const response = await axios.get(`${API}/products/`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+// export const getProduct = createAsyncThunk("product/getProduct", async () => {
+//   try {
+//     console.log("Токен для запроса получения продуктов:", token);
+//     const response = await axios.get(`${API}/products/`, {
+//       headers: {
+//         Authorization: `Bearer ${token}`,
+//       },
+//     });
 
-    console.log("Ответ сервера на запрос получения продуктов:", response);
-    return response.data;
-  } catch (error) {
-    throw new Error("Failed to fetch products");
-  }
-});
+//     console.log("Ответ сервера на запрос получения продуктов:", response);
+//     return response.data;
+//   } catch (error) {
+//     throw new Error("Failed to fetch products");
+//   }
+// });

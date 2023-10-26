@@ -14,16 +14,22 @@ const CreateProduct = () => {
     country_of_origin: "",
   });
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // const token = localStorage.getItem("token");
+  //   // console.log(token);
+  //   dispatch(
+  //     createProduct(
+  //       productData
+  //       // token
+  //     )
+  //   );
+  // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const token = localStorage.getItem("token");
-    // console.log(token);
-    dispatch(
-      createProduct(
-        productData
-        // token
-      )
-    );
+    const token = localStorage.getItem("accessToken");
+    dispatch(createProduct({ productData, token }));
   };
   return (
     <div>

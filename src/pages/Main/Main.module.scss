@@ -1,0 +1,144 @@
+.main {
+  .header {
+    .imgOfHeader img {
+      width: 100%;
+      height: 85vh;
+      border-radius: 50px;
+      object-fit: cover;
+    }
+  }
+
+  .more {
+    padding: 40px 60px;
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .promotion {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .boxG {
+      display: flex;
+      border: 1px solid black;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+
+    .productInfo {
+      display: flex;
+      flex-direction: column;
+
+      h4 {
+        padding-bottom: 10px;
+      }
+    }
+
+    .imgOfBoxG {
+      width: 150px;
+      margin-left: 20px;
+      border-radius: 10px;
+    }
+
+    .all {
+      text-align: right;
+      cursor: pointer;
+    }
+
+    .top_sellers {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .boxV {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid grey;
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 0 10px;
+        margin-bottom: 40px;
+
+        button {
+          background-color: orange;
+          border: none;
+          border-radius: 15px;
+          padding: 10px 0;
+          color: white;
+          cursor: pointer;
+        }
+      }
+
+      .textImg {
+        width: 200px;
+      }
+
+      .imgOfBoxV {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+
+      .infoTop {
+        margin: 10px 0;
+
+        span {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+
+          h5 {
+            padding: 5px 0;
+            padding-right: 5px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .news {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      .block {
+        display: flex;
+        border: 1px solid grey;
+        border-radius: 10px;
+        width: 48%;
+        padding: 0 15px;
+
+        .imgOfNews {
+          width: 200px;
+          object-fit: cover;
+        }
+
+        .textOfNews {
+          margin: 15px 0;
+
+          h3 {
+            padding-bottom: 10px;
+            text-decoration: underline;
+          }
+        }
+
+        .opposite {
+          margin-top: 80px;
+          display: flex;
+          justify-content: space-between;
+
+          span:nth-child(2) {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

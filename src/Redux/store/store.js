@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import AuthSlice from "../Slices/AuthSlice";
+import LoginSlice from "../Slices/LoginSlice";
 import ProductSlice from "../Slices/ProductSlice";
 
 // const initialState = {
@@ -22,6 +23,7 @@ const store = configureStore({
   reducer: {
     products: ProductSlice,
     register: AuthSlice,
+    login: LoginSlice,
     // reducer: reducer,
   },
 });
